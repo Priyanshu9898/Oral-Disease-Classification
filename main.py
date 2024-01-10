@@ -49,7 +49,7 @@ try:
     # Initialize and train the model
     trainer = ModelTrainer(model_name='efficientvit_b0', config=model_training_config, num_classes=len(
         dataset.classes), train_loader=train_loader, val_loader=val_loader, device=device, class_names=class_names)
-    trainer.train(num_epochs=1)
+    trainer.train(num_epochs=100)
 
     # Evaluate the model
     accuracy, precision, recall, f1 = trainer.evaluate()
@@ -72,7 +72,7 @@ try:
     #     # Initialize and train the model
     #     trainer = ModelTrainer(model_name=model_name, config=model_training_config, num_classes=len(class_names),
     #                            train_loader=train_loader, val_loader=val_loader, device=device, class_names=class_names)
-    #     trainer.train(num_epochs=1)
+    #     trainer.train(num_epochs=100)
 
     #     # Evaluate the model
     #     accuracy, precision, recall, f1 = trainer.evaluate()
