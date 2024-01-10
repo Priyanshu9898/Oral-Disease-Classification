@@ -19,7 +19,7 @@
 Clone the repository
 
 ```bash
-git clone https://github.com/Prriyanshu9898/Oral-Disease-Classification.git
+git clone https://github.com/Priyanshu9898/Oral-Disease-Classification.git
 ```
 ### STEP 01- Create a Python environment after opening the repository
 ```bash
