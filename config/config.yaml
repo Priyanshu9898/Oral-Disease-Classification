@@ -9,3 +9,9 @@ data_ingestion:
 data_processing:
   data_dir: artifacts/data_ingestion/dataset
   
+model_training:
+  root_dir: artifacts/results
+  checkpoint_path: artifacts/results/checkpoint.pt
+  model_path: artifacts/results
+  acccuracy_path: artifacts/results
+  confusionMetrix_path: artifacts/results

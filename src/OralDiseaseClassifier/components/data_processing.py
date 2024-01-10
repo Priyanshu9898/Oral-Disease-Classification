@@ -28,11 +28,11 @@ class OralDiseaseDataset(Dataset):
         image = Image.open(img_path).convert('RGB')
         if self.transform:
             image = self.transform(image)
-        logger.info(f"Image at index {idx} has been transformed")
+        # logger.info(f"Image at index {idx} has been transformed")
         return image, label
 
 
-class DataLoader:
+class CustomDataLoader:
     def __init__(self, root_dir, batch_size, shuffle=True, train_split=0.9) -> None:
         logger.info("Initializing DataLoader")
         self.root_dir = root_dir

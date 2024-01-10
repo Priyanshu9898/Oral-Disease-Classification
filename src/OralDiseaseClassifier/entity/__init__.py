@@ -13,3 +13,13 @@ class DataIngestionConfig:
 @dataclass(frozen=True)
 class DataProcesssingConfig:
     data_dir: Path
+
+
+@dataclass(frozen=True)
+class ModelTrainingConfig:
+    root_dir: Path
+    checkpoint_path: Path
+    model_path: Path
+    acccuracy_path: Path
+    confusionMetrix_path: Path
+    

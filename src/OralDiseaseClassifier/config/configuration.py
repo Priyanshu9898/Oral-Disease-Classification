@@ -1,6 +1,6 @@
 from OralDiseaseClassifier.constants import *
 from OralDiseaseClassifier.utils.common import read_yaml, create_directories
-from OralDiseaseClassifier.entity import DataIngestionConfig, DataProcesssingConfig
+from OralDiseaseClassifier.entity import DataIngestionConfig, DataProcesssingConfig, ModelTrainingConfig
 import os
 from pathlib import Path
 
@@ -33,7 +33,7 @@ class ConfigurationManager:
     def get_data_processing_config(self) -> DataProcesssingConfig:
         config = self.config.data_processing
 
-        print(config)
+        # print(config)
         # create_directories([config.root_dir])
 
         data_processing_config = DataProcesssingConfig(
@@ -41,3 +41,19 @@ class ConfigurationManager:
         )
 
         return data_processing_config
+
+    def get_model_training_config(self) -> ModelTrainingConfig:
+        config = self.config.model_training
+
+        print(config)
+        create_directories([config.root_dir])
+
+        model_training_config = ModelTrainingConfig(
+            root_dir=Path(config.root_dir),
+            checkpoint_path=Path(config.checkpoint_path),
+            model_path=Path(config.model_path),
+            acccuracy_path=Path(config.acccuracy_path),
+            confusionMetrix_path=Path(config.confusionMetrix_path),
+        )
+
+        return model_training_config
