@@ -18,9 +18,10 @@ app = Flask(__name__)
 CORS(app)
 
 SWAGGER_URL = '/swagger'
-API_URL = '/static/swagger.json' 
+API_URL = '/static/swagger.json'
 swaggerui_blueprint = get_swaggerui_blueprint(SWAGGER_URL, API_URL)
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
+
 
 def run_data_preprocessing():
     # Run your data preprocessing pipeline here
@@ -61,7 +62,7 @@ def train_model():
 def load_model(model_name, num_classes, device):
     model = timm.create_model(
         model_name, pretrained=False, num_classes=num_classes)
-    model_path = f'artifacts/results/{model_name}_oral_disease_classifier.pth'
+    model_path = f'best_model/{model_name}_oral_disease_classifier.pth'
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.to(device)
     model.eval()

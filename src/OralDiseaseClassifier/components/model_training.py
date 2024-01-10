@@ -65,7 +65,7 @@ class ModelTrainer:
 
         for epoch in range(num_epochs):
             self.model.train()
-            print("Type of self.train_loader:", type(self.train_loader))
+            # print("Type of self.train_loader:", type(self.train_loader))
             running_loss, running_corrects, total_samples = 0.0, 0, 0
 
             # Training loop
