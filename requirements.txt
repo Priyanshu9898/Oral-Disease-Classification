@@ -16,4 +16,9 @@ scipy
 Flask
 Flask-Cors
 gdown
+torch
+torchvision
+timm
+Pillow
+scikit-learn
 -e .

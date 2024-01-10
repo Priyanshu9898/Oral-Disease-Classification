@@ -6,3 +6,4 @@ stages:
       - config/config.yaml
     outs:
       - artifacts/data_ingestion/data.zip
+      - artifacts/data_ingestion/dataset

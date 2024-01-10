@@ -1,6 +1,6 @@
 from OralDiseaseClassifier.constants import *
 from OralDiseaseClassifier.utils.common import read_yaml, create_directories
-from OralDiseaseClassifier.entity import DataIngestionConfig
+from OralDiseaseClassifier.entity import DataIngestionConfig, DataProcesssingConfig
 import os
 from pathlib import Path
 
@@ -29,3 +29,15 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+
+    def get_data_processing_config(self) -> DataProcesssingConfig:
+        config = self.config.data_processing
+
+        print(config)
+        # create_directories([config.root_dir])
+
+        data_processing_config = DataProcesssingConfig(
+            data_dir=Path(config.data_dir),
+        )
+
+        return data_processing_config
