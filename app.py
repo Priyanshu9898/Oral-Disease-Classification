@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import torch
 from torchvision import transforms
 import timm
@@ -17,6 +17,8 @@ from flask_swagger_ui import get_swaggerui_blueprint
 app = Flask(__name__)
 CORS(app)
 
+allowed_origins = ['http://localhost:3000', 'http://127.0.0.1:3000']
+
 SWAGGER_URL = '/swagger'
 API_URL = '/static/swagger.json'
 swaggerui_blueprint = get_swaggerui_blueprint(SWAGGER_URL, API_URL)
@@ -33,6 +35,7 @@ def run_data_preprocessing():
 
 
 @app.route('/train', methods=['POST'])
+@cross_origin(origins=allowed_origins)
 def train_model():
     try:
         data = request.json
@@ -83,12 +86,13 @@ def preprocess_image(image):
 
 
 @app.route('/predict', methods=['POST'])
+@cross_origin(origins=allowed_origins)
 def predict_image():
     try:
         data = request.json
         image_data = data['image']
         # Replace with your default model name
-        model_name = data.get('model_name', 'default_model_name')
+        model_name = data.get('model_name', 'efficientvit_b0')
 
         # Decode the image
         image = Image.open(
@@ -99,14 +103,14 @@ def predict_image():
         processed_image = preprocess_image(image).to(device)
 
         # Load the model
-        num_classes = 6  # Update this to the number of classes in your model
+        num_classes = 6  
         model = load_model(model_name, num_classes, device)
 
         # Predict
         with torch.no_grad():
             outputs = model(processed_image)
             _, predicted = torch.max(outputs, 1)
-            prediction = predicted.item()  # Convert to desired format or mapping
+            prediction = predicted.item()
 
         # Return the prediction result
         return jsonify({"prediction": prediction}), 200
