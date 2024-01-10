@@ -21,4 +21,5 @@ torchvision
 timm
 Pillow
 scikit-learn
+flask-swagger-ui
 -e .
