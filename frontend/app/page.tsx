@@ -1,10 +1,11 @@
-import { Button } from '@/components/ui/button'
+
+import ImageInput from '@/components/Home/ImageInput'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      Home
+      <ImageInput />
     </div>
   )
 }
