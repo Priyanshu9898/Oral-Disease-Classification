@@ -55,7 +55,7 @@ The Dental Condition Dataset is a comprehensive collection of images specificall
 - OOP Principles
 
 ## Installation
-    To install and run the Contact Management App locally, follow these steps:
+    To install and run the App locally, follow these steps:
     
 # How to run Backend?
 ### STEPS:
@@ -116,6 +116,16 @@ npm run build
 2. dvc repro
 3. dvc dag
 
+### to run train pipeline
+### step 01 - download the dataset and add extract it like this:
+```bash
+mkdir artifacts
+cd artifacts
+mkdir data_ingestion
+cd data_ingestion
+mkdir dataset
+```
+extract all 6 data class folders inside dataset
 
 
 DVC 
