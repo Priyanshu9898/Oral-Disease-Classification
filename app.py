@@ -91,6 +91,7 @@ def predict_image():
     try:
         data = request.json
         image_data = data['image']
+
         # Replace with your default model name
         model_name = data.get('model_name', 'efficientvit_b0')
 
@@ -103,8 +104,11 @@ def predict_image():
         processed_image = preprocess_image(image).to(device)
 
         # Load the model
-        num_classes = 6  
+        num_classes = 6
         model = load_model(model_name, num_classes, device)
+
+        classes = ['Calculus', 'Caries', 'Gingivitis',
+                   'Hypodontia', 'Tooth Discoloration', 'Ulcers']
 
         # Predict
         with torch.no_grad():
@@ -113,11 +117,11 @@ def predict_image():
             prediction = predicted.item()
 
         # Return the prediction result
-        return jsonify({"prediction": prediction}), 200
+        return jsonify({"prediction": classes[prediction]}), 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
