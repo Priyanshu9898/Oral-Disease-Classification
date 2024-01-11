@@ -17,7 +17,10 @@
 9. Update the dvc.yaml
 10. app.py
 
-# How to run?
+## Installation
+    To install and run the Contact Management App locally, follow these steps:
+    
+# How to run Backend?
 ### STEPS:
 
 Clone the repository
@@ -44,35 +47,30 @@ env\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## MLflow
-
-- [Documentation](https://mlflow.org/docs/latest/index.html)
-
-- [MLflow tutorial](https://youtube.com/playlist?list=PLkz_y24mlSJZrqiZ4_cLUiP0CBN5wFmTb&si=zEp_C8zLHt1DzWKK)
-
-##### cmd
-- mlflow ui
-
-### dagshub
-[dagshub](https://dagshub.com/)
-
-MLFLOW_TRACKING_URI=https://dagshub.com/Priyanshu9898/Chest-Cancer-Classification.mlflow \
-MLFLOW_TRACKING_USERNAME=Priyanshu9898 \
-MLFLOW_TRACKING_PASSWORD=1dc505ed931b2af16eacead37f82f256c16d99fe \
-python script.py
-
-Run this to export as env variables:
-
+### STEP 03- Run the Flask Backend
 ```bash
-
-export MLFLOW_TRACKING_URI=https://dagshub.com/Priyanshu9898/Chest-Cancer-Classification.mlflow
-
-export MLFLOW_TRACKING_USERNAME=Priyanshu9898 
-
-export MLFLOW_TRACKING_PASSWORD=1dc505ed931b2af16eacead37f82f256c16d99fe
-
+python app.py
 ```
 
+# How to run Frontend?
+### STEP 01- Go to client
+```bash
+cd client
+```
+### STEP 02- install the requirements
+```bash
+npm install
+```
+
+### STEP 03- Run the NextJS frontend
+```bash
+npm run dev
+```
+
+### STEP 04- Build the frontend
+```bash
+npm run build
+```
 
 
 ### DVC cmd
@@ -82,17 +80,30 @@ export MLFLOW_TRACKING_PASSWORD=1dc505ed931b2af16eacead37f82f256c16d99fe
 3. dvc dag
 
 
-## About MLflow & DVC
-
-MLflow
-
- - Its Production Grade
- - Trace all of your expriements
- - Logging & taging your model
-
 
 DVC 
 
  - Its very lite weight for POC only
  - lite weight expriements tracker
  - It can perform Orchestration (Creating Pipelines)
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Priyanshu9898/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/priyanshumalaviya/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Priyanshu2281)
+[![Medium](https://img.shields.io/badge/medum-1DA1F2?style=for-the-badge&logo=medium&logoColor=black)](https://medium.com/@priyanshumalaviya9210)
+## Demo
+
+Insert gif or link to demo
+
+
+## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+
+
+## License
