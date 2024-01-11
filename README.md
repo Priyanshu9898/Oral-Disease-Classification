@@ -1,7 +1,7 @@
 # Oral-Disease-Classification
 
 ### Frontend URL: https://oral-disease-classification.vercel.app/
-### Backend URL: 
+### Backend URL: https://oraldiseasedetector.onrender.com
 (Use Train route only on local system)
 
 ## Workflows
