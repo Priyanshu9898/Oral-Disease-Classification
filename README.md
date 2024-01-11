@@ -1,5 +1,9 @@
 # Oral-Disease-Classification
 
+### Frontend URL: https://oral-disease-classification.vercel.app/
+### Backend URL: 
+(Use Train route only on local system)
+
 ## Workflows
 
 1. Update config.yaml
