@@ -2,8 +2,8 @@
 
 Oral Disease Classification is an advanced AI-driven application aimed at identifying various oral diseases through image analysis. Utilizing state-of-the-art deep learning and computer vision techniques, this tool serves as a significant aid in dental diagnostics.
 
-### Frontend URL: [Oral Disease Classification Frontend](https://oral-disease-classification.vercel.app/)
-### Backend URL: [Oral Disease Classification Backend](https://oraldiseasedetector.onrender.com)
+### Frontend URL: https://oral-disease-classification.vercel.app/
+### Backend URL: https://oraldiseasedetector.onrender.com
 (Note: Use Train route only on the local system)
 
 ## Features
