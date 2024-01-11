@@ -24,6 +24,19 @@ Oral Disease Classification is an advanced AI-driven application aimed at identi
 9. Update the dvc.yaml
 10. app.py
 
+## Technology Stack
+### Frontend:
+- Nextjs 13
+- TypeScript
+- TailwindCSS
+### Backend:
+- Python
+- DVC
+- Deep Learning & Computer Vision
+- Transformers & HuggingFace
+- Flask
+- OOP Principles
+
 ## Installation
     To install and run the Contact Management App locally, follow these steps:
     
