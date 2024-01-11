@@ -124,6 +124,28 @@ DVC
  - lite weight expriements tracker
  - It can perform Orchestration (Creating Pipelines)
 
+# Oral Disease Detector Backend API Endpoints
+
+This document outlines the API endpoints for the Oral Disease Detector backend.
+
+| Endpoint  | Method | Description                                           | Request Body Example                                                          | Success Response Example                          | Error Response Example             |
+|-----------|--------|-------------------------------------------------------|-------------------------------------------------------------------------------|---------------------------------------------------|------------------------------------|
+| `/train`  | POST   | Triggers the training of the model with parameters.   | `{ "model_name": "name_of_the_model" }`                                      | `{ "message": "Training for model [model_name] completed successfully." }` | `{ "error": "Error message" }`     |
+| `/predict`| POST   | Predicts the oral disease from the provided image.    | `{ "image": "base64_encoded_image", "model_name": "optional_model_name" }`   | `{ "prediction": "predicted_class" }`             | `{ "error": "Error message" }`     |
+| `/`       | GET    | Provides a link to Swagger documentation.             | N/A                                                                           | HTML content.                                     | N/A                                |
+
+## Swagger UI
+
+- **URL:** `/swagger`
+- Provides an interactive user interface for testing and understanding the API endpoints.
+
+## Notes
+
+- All POST endpoints support cross-origin requests from specified origins.
+- The backend is configured to run on host `0.0.0.0` and port `5000`.
+- Ensure that the request body for POST methods is in JSON format.
+
+
 ## Training Results
 
 | Model             | Accuracy   | Precision   | Recall   | F1 Score   | 
