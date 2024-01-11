@@ -22,4 +22,5 @@ timm
 Pillow
 scikit-learn
 flask-swagger-ui
+gunicorn
 -e .

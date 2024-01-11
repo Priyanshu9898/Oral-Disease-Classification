@@ -17,7 +17,8 @@ from flask_swagger_ui import get_swaggerui_blueprint
 app = Flask(__name__)
 CORS(app)
 
-allowed_origins = ['http://localhost:3000', 'http://127.0.0.1:3000']
+allowed_origins = ['https://oral-disease-classification.vercel.app', 'http://localhost:3000', 'http://127.0.0.1:3000',
+                   'https://oral-disease-classification.vercel.app/']
 
 SWAGGER_URL = '/swagger'
 API_URL = '/static/swagger.json'
@@ -121,6 +122,12 @@ def predict_image():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+@app.route('/')
+@cross_origin(origins=allowed_origins)
+def index():
+    return "<h1>Oral Disease Detector Backend</h1> <br /> Go to Swagger Docs: <a href='/swagger'>Link</a>"
 
 
 if __name__ == '__main__':
