@@ -27,7 +27,7 @@ const ImageInput = () => {
     if (image) {
       setIsLoading(true);
       try {
-        const res = await axios.post("http://127.0.0.1:5000/predict", {
+        const res = await axios.post("https://oraldiseasedetector.onrender.com/predict", {
           image: image.split(",")[1],
         });
         setPrediction(res.data.prediction);
