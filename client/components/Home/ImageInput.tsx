@@ -42,7 +42,7 @@ const ImageInput = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 dark:bg-gray-800">
+    <div className="container mx-auto p-4 dark:bg-gray-800 w-[90%]">
       <div className="mb-6">
         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
           Upload Image
